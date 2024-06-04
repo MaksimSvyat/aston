@@ -52,10 +52,11 @@ public class Cat extends Animal {
             if (foodInDish >= stomachCapacity) {
                 foodInDish -= stomachCapacity;
                 hungry = false;
-                System.out.println("Кошка по кличке " + name + " покушала " + stomachCapacity + " еды из миски.");
+                System.out.println("Кошка по кличке " + name + " покушала " + stomachCapacity +
+                        " еды из миски и теперь сыта.");
             } else {
                 System.out.println("Кошка по кличке " + name + " не покушала! В миске всего " + foodInDish +
-                        " еды, а ей нужно " + stomachCapacity);
+                        " еды, а ей нужно " + stomachCapacity + ", она осталась голодной.");
             }
         } else {
             System.out.println("Кошка по кличке " + name + " не голодна.");
