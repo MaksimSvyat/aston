@@ -1,10 +1,23 @@
 package animals;
 
 public class Animal {
-    public static int count;
+    private static int count;
+    private String name;
 
     public Animal() {
         count++;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void ran(int distance) {

@@ -37,7 +37,7 @@ public class Main {
             cat.eatFromDish();
         }
 
-        System.out.println("Создано животных: " + Animal.count + " шт. Из них собак: " + Dog.dogCount +
-                " шт. и кошек: " + Cat.catCount + " шт.");
+        System.out.println("Создано животных: " + Animal.getCount() + " шт. Из них собак: " + Dog.getDogCount() +
+                " шт. и кошек: " + Cat.getCatCount() + " шт.");
     }
 }
