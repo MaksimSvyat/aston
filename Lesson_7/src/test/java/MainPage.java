@@ -52,8 +52,11 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//*[@id='pay-connection']/button")
     private WebElement submitButton;
 
-    @FindBy(xpath = "//span[@class='pay-description__text']")
+    @FindBy(xpath = "//div[@class='pay-description__text']/span")
     private WebElement payFormPhone;
+
+    @FindBy(xpath = "//div[@class='pay-description__cost']/span[1]")
+    private WebElement payFormSum;
 
     public MainPage() {
         driver.get(ConfigProvider.URL);
@@ -121,8 +124,7 @@ public class MainPage extends BasePage {
         String actualText = payFormPhone.getText();
         assertEquals(expectedText1, actualText);
 
-        WebElement payFSum = payFormPhone.findElement(By.xpath("preceding-sibling::*[1]"));
-        actualText = payFSum.getText();
+        actualText = payFormSum.getText();
         assertEquals(expectedText2, actualText);
     }
 }
