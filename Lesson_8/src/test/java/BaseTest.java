@@ -1,17 +1,16 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.io.IOException;
 import java.time.Duration;
 
 public abstract class BaseTest {
     protected WebDriver driver;
 
-    @Before
-    public void setUp() throws IOException {
+    @BeforeEach
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -20,7 +19,7 @@ public abstract class BaseTest {
         BasePage.setDriver(driver);
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
         driver.close();
         driver.quit();
